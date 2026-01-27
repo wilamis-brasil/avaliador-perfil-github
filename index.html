@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitAuditor Premium | Análise Profissional de GitHub</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Global Header -->
+    <header class="Header">
+        <div class="Header-brand">
+            <i class='bx bxl-github'></i>
+            <span>GitAuditor <span style="font-weight: 400; color: var(--color-fg-muted);">Premium</span></span>
+        </div>
+        <div style="margin-left: auto; font-size: 12px; color: var(--color-fg-muted);">
+            Por <a href="https://github.com/wilamis-brasil" target="_blank" style="text-decoration: underline; color: var(--color-accent-fg);">Wilamis B.</a>
+        </div>
+    </header>
+
+    <!-- Initial Search View -->
+    <div id="search-view" class="SearchBox">
+        <h2 class="mb-2">Avaliador de Perfil do GitHub</h2>
+        <p class="mb-4">Análise baseada nos guias oficiais do GitHub e OpenSource.guide.</p>
+        
+        <input type="text" id="username" placeholder="GitHub Username" autocomplete="off">
+        
+        <div class="mb-2" style="text-align: left;">
+            <label for="token" class="text-small text-bold">Personal Access Token (Opcional)</label>
+            <p class="text-small text-muted mb-2">
+                Para análise profunda (privada/ilimitada), use um 
+                <a href="https://github.com/settings/tokens/new?scopes=repo,read:user&description=GitAuditor" target="_blank">Classic Token</a>.
+                <a href="https://youtu.be/Jx_RM4p7NrM?si=BPRNVdrozwB-_XCH" target="_blank" style="display: block; margin-top: 4px;">
+                    📹 Tutorial em Vídeo
+                </a>
+            </p>
+            <input type="password" id="token" placeholder="ghp_..." autocomplete="off">
+        </div>
+        
+        <button id="btn-analyze" class="btn btn-primary width-full">Iniciar Análise Profissional</button>
+        
+        <p class="text-small text-muted text-center mt-2" style="font-size: 11px; opacity: 0.7;">
+            Ferramenta desenvolvida por <a href="https://github.com/wilamis-brasil" target="_blank">Wilamis Brasil</a> para a comunidade.
+        </p>
+    </div>
+
+    <!-- Loader -->
+    <div id="loader-view" class="LoaderOverlay hidden">
+        <div class="Spinner"></div>
+        <h3 id="loader-text">Conectando...</h3>
+        <p id="loader-sub" class="text-small text-muted">Aguarde um momento.</p>
+    </div>
+
+    <!-- Dashboard Layout -->
+    <div id="dashboard-view" class="Layout hidden">
+        
+        <!-- Sidebar -->
+        <aside class="ProfileSidebar">
+            <button id="btn-back" class="btn btn-secondary width-full mb-4">
+                <i class='bx bx-arrow-back'></i> Nova Auditoria
+            </button>
+
+            <img id="p-avatar" class="Avatar" src="" alt="">
+            
+            <div class="ProfileNames">
+                <h1 id="p-name"></h1>
+                <span id="p-login" class="nickname"></span>
+            </div>
+            
+            <div id="p-bio" class="mt-2 text-muted"></div>
+            
+            <div class="ProfileMeta">
+                <div class="ProfileMeta-item"><i class='bx bx-buildings'></i> <span id="p-company">-</span></div>
+                <div class="ProfileMeta-item"><i class='bx bx-map'></i> <span id="p-location">-</span></div>
+                <div class="ProfileMeta-item"><i class='bx bx-link'></i> <span id="p-site">-</span></div>
+                <div class="ProfileMeta-item"><i class='bx bx-group'></i> <span id="p-followers">0</span> seguidores</div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="MainContent">
+            
+            <!-- Red Flags Alert -->
+            <div id="red-flags-section" class="Flash Flash-danger hidden">
+                <i class='bx bxs-error-circle' style="font-size: 20px; margin-top: 2px;"></i>
+                <div>
+                    <h3>Pontos de Atenção Críticos</h3>
+                    <ul id="red-flags-list"></ul>
+                </div>
+            </div>
+
+            <!-- Score Hero -->
+            <section class="ScoreHero">
+                <!-- Card 1: Main Grade -->
+                <div class="ScoreCard">
+                    <div id="final-grade-circle" class="ScoreCircle">-</div>
+                    <div class="ScoreDetails">
+                        <h3>Score Profissional</h3>
+                        <div id="final-score" class="value">0/100</div>
+                        <p class="text-small text-muted mb-0">Baseado em métricas de mercado</p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Subscores List -->
+                <div class="ScoreCard">
+                    <div class="SubscoreList width-full" id="subscores-container">
+                        <!-- Injected JS -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Grid (Mini) -->
+            <div class="StatsGrid mb-4">
+                <div class="StatBox">
+                    <div class="StatLabel">Repositórios Auditados</div>
+                    <div id="stat-repos-count" class="StatValue">0</div>
+                </div>
+                <div class="StatBox">
+                    <div class="StatLabel">Tempo de GitHub (Anos)</div>
+                    <div id="stat-years" class="StatValue">0</div>
+                </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <nav class="TabNav">
+                <button class="TabNav-item selected" data-tab="tab-overview">Visão Geral</button>
+                <button class="TabNav-item" data-tab="tab-checklist">Checklist Completo</button>
+                <button class="TabNav-item" data-tab="tab-repos">Projetos em Destaque</button>
+            </nav>
+
+            <!-- Tab: Overview -->
+            <div id="tab-overview" class="TabContent active">
+                
+                <h3 class="mb-2">Plano de Ação Prioritário</h3>
+                <div class="ActionPlan" id="top-actions-list">
+                    <!-- Actions Injected -->
+                </div>
+
+                <div class="Flash mt-2" style="background: var(--color-canvas-subtle); border-color: var(--color-border-default);">
+                    <i class='bx bx-user-voice' style="font-size: 24px; color: var(--color-accent-fg);"></i>
+                    <div>
+                        <h3 class="text-small text-bold mb-2">Feedback Simulado do Recrutador</h3>
+                        <p id="recruiter-feedback-text" class="text-small text-muted mb-0">Analisando...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab: Checklist -->
+            <div id="tab-checklist" class="TabContent">
+                <div id="checklist-container">
+                    <!-- Checklist Items Injected -->
+                </div>
+            </div>
+
+            <!-- Tab: Repos -->
+            <div id="tab-repos" class="TabContent">
+                <div class="RepoGrid" id="repos-container">
+                    <!-- Repo Cards Injected -->
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="oneko.js"></script>
+
+    <!-- Floating Sponsor Button -->
+    <a href="https://github.com/sponsors/wilamis-brasil" target="_blank" class="SponsorFloat" title="Apoie este projeto open source">
+        <i class='bx bxs-heart'></i>
+        <span>Apoiar</span>
+    </a>
+</body>
+</html>
