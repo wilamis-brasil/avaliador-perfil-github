@@ -1,8 +1,8 @@
-# GitAuditor Premium 🚀
+# Avaliador de Perfil Profissional do Github 🚀
 
 ![Version](https://img.shields.io/badge/version-4.3-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-active-success)
 
-**Avaliador de Perfil do GitHub Profissional**
+**GithubAuditor Premium**
 
 > **Acesse online:** [wilamis-brasil.github.io/avaliador-perfil-github](https://wilamis-brasil.github.io/avaliador-perfil-github)
 
