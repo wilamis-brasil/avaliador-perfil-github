@@ -1,4 +1,4 @@
-# Avaliador de Perfil Github - GitAuditor Premium 🚀
+# GitAuditor Premium 🚀
 
 ![Version](https://img.shields.io/badge/version-4.3-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-active-success)
 

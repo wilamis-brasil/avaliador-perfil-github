@@ -271,18 +271,12 @@ const startAudit = async () => {
     const trials = parseInt(localStorage.getItem('gitAuditTrials') || '0');
     
     const userTokens = rawToken ? rawToken.split(',').map(t => t.trim()).filter(t => t) : [];
-    const fallbackToken = "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";
-    STATE.tokens = [...userTokens, fallbackToken];
+    STATE.tokens = [...userTokens];
     STATE.currentTokenIndex = 0;
     STATE.cache.clear();
 
     const username = ui.inputs.user ? ui.inputs.user.value.trim() : "";
     if (!username) return alert("Digite um username válido.");
-    
-    if (STATE.tokens.length === 0 && trials >= 3) {
-        alert("Limite gratuito atingido. Adicione um token.");
-        return;
-    }
 
     if(ui.searchView) ui.searchView.classList.add('hidden');
     if(ui.dashboardView) ui.dashboardView.classList.add('hidden');
