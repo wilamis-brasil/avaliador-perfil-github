@@ -13,7 +13,7 @@ A ideia é te ajudar a deixar o perfil mais **profissional** (do jeito que recru
 
 ---
 
-## ✨ O que ele faz
+## ✨ Funcionalidades Principais
 
 - **📊 Score do perfil (0 a 100):** uma nota geral com base em critérios de mercado.
 - **🏷️ Badges de nível:** mostra um “nível” do seu perfil (de iniciante até mais avançado), só pra você ter referência.
