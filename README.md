@@ -39,29 +39,6 @@ Ajudar desenvolvedores a transformar seus perfis do GitHub em portfólios de alt
 4.  Clique em **"Iniciar Análise Profissional"**.
 5.  Receba o relatório completo com notas, badges e dicas de melhoria.
 
-## 📦 Instalação Local
-
-Para rodar o projeto na sua máquina:
-
-```bash
-# 1. Clone este repositório
-git clone https://github.com/wilamis-brasil/git-auditor.git
-
-# 2. Entre na pasta do projeto
-cd git-auditor
-
-# 3. Abra o arquivo index.html no seu navegador
-# OU, para uma melhor experiência (evitar bloqueios de CORS), use um servidor local:
-
-# Com Python 3
-python -m http.server
-
-# Com Node.js (npx)
-npx serve .
-```
-
-Acesse `http://localhost:8000` (ou a porta indicada).
-
 ## 🤝 Como Contribuir
 
 Contribuições são super bem-vindas! Se você tem ideias para novos critérios de avaliação ou melhorias na interface:
