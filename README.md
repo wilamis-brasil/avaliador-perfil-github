@@ -1,60 +1,70 @@
-# Avaliador de Perfil Profissional do Github 🚀
+# Avaliador de Perfil do GitHub 🚀
 
-![Version](https://img.shields.io/badge/version-4.3-blue) ![License](https://img.shields.io/badge/license-MIT-green) ![Status](https://img.shields.io/badge/status-active-success)
+![Version](https://img.shields.io/badge/version-4.3-blue)
+![License](https://img.shields.io/badge/license-MIT-green)
+![Status](https://img.shields.io/badge/status-active-success)
 
-**GithubAuditor Premium**
+**GitHubAuditor Premium**
 
-> **Acesse online:** [wilamis-brasil.github.io/avaliador-perfil-github](https://wilamis-brasil.github.io/avaliador-perfil-github)
+> **Acesse online:** https://wilamis-brasil.github.io/avaliador-perfil-github
 
-O **GitAuditor Premium** é uma ferramenta avançada de análise estática e comportamental para perfis do GitHub. Ele audita sua conta baseando-se nas melhores práticas da indústria, guias oficiais do GitHub e OpenSource.guide, fornecendo um feedback acionável para melhorar sua presença profissional como desenvolvedor.
+O **GitHubAuditor Premium** é um site que analisa seu perfil do GitHub e te dá um feedback bem direto do que melhorar.  
+A ideia é te ajudar a deixar o perfil mais **profissional** (do jeito que recrutador gosta), seguindo boas práticas da comunidade.
 
 ---
 
-## ✨ Funcionalidades Principais
+## ✨ O que ele faz
 
-*   **📊 Score Profissional:** Algoritmo de pontuação (0-100) calibrado com métricas de mercado (Engenharia, Comunidade, Segurança, Perfil).
-*   **🔍 Auditoria Profunda (Deep Scan):** Analisa repositórios em busca de arquivos críticos (`README`, `LICENSE`, `CONTRIBUTING`, `SECURITY.md`), presença de CI/CD (Actions) e Testes Automatizados.
-*   **🏆 Badges de Autoridade:** Identifica níveis de senioridade (de *Novato* a *Veterano*) e influência na comunidade (*Rising Star* a *Famous*).
-*   **🤖 Feedback de Recrutador (Simulado):** Gera uma opinião qualitativa simulando a visão de um Tech Recruiter ao visitar seu perfil.
-*   **📋 Plano de Ação Prioritário:** Lista inteligente de tarefas ordenada por impacto (Alto/Médio/Baixo) para corrigir falhas rapidamente.
-*   **📈 Análise de Consistência:** Verifica a frequência de commits e diversidade de projetos (não apenas o "green wall").
+- **📊 Score do perfil (0 a 100):** uma nota geral com base em critérios de mercado.
+- **🏷️ Badges de nível:** mostra um “nível” do seu perfil (de iniciante até mais avançado), só pra você ter referência.
+- **🧠 Feedback estilo recrutador:** um texto simulando como um recrutador pode enxergar seu perfil.
+- **✅ Plano de ação:** lista do que corrigir primeiro, separado por impacto (alto / médio / baixo).
+- **📈 Consistência:** analisa seus commits e variedade de projetos (não só o “quadradinho verde”).
 
-## 🛠️ Tecnologias Utilizadas
+---
 
-*   **Frontend:** HTML5 Semântico, CSS3 Moderno, JavaScript.
-*   **API:** Integração direta com **GitHub REST API v3**.
-*   **Design:** Interface inspirada no **GitHub Primer Design System**.
-*   **Extras:** Oneko.js (Mascote interativo).
+## 🛠️ Tecnologias
 
-## 🚀 Como Usar
+- **Frontend:** HTML5, CSS3, JavaScript (puro)
+- **API:** GitHub REST API v3
+- **Design:** inspirado no estilo do GitHub (Primer)
+- **Extra:** Oneko.js (mascote interativo)
 
-1.  Acesse a versão online ou rode localmente.
-2.  Insira seu **GitHub Username**.
-3.  **(Recomendado)** Insira um **Token Pessoal (Classic)** para aumentar o limite de requisições da API (de 60/h para 5000/h) e permitir análise de repositórios privados.
-    *   *Nota: O token não é salvo em nenhum servidor, apenas na memória do seu navegador durante a sessão.*
-4.  Clique em **"Iniciar Análise Profissional"**.
-5.  Receba o relatório completo com notas, badges e dicas de melhoria.
+---
 
-## 🤝 Como Contribuir
+## 🚀 Como usar
 
-Contribuições são super bem-vindas! Se você tem ideias para novos critérios de avaliação ou melhorias na interface:
+1. Abra o site (online) ou rode localmente.
+2. Digite seu **username do GitHub**.
+3. **(Opcional, mas recomendado)** coloque um **Personal Access Token (Classic)** pra aumentar o limite da API (de 60/h pra 5000/h) e permitir analisar repositórios privados.  
+   - *Obs: o token não vai pra nenhum servidor. Ele só fica na sessão do seu navegador.*
+4. Clique em **"Iniciar Análise Profissional"**.
+5. Pronto: você recebe a nota, badges e as melhorias recomendadas.
 
-1.  Faça um **Fork** do projeto.
-2.  Crie uma **Branch** para sua feature (`git checkout -b feature/NovaAnalise`).
-3.  Faça o **Commit** das suas mudanças (`git commit -m 'Add: Verificação de Sponsors'`).
-4.  Faça o **Push** para a Branch (`git push origin feature/NovaAnalise`).
-5.  Abra um **Pull Request**.
+---
+
+## 🤝 Contribuindo
+
+Se você quiser melhorar o projeto, manda ver:
+
+1. Faça um **Fork**
+2. Crie uma branch (`git checkout -b feature/minha-melhoria`)
+3. Commit (`git commit -m "Add: nova regra de análise"`)
+4. Push (`git push origin feature/minha-melhoria`)
+5. Abra um **Pull Request**
+
+---
 
 ## 📝 Licença
 
-Este projeto está sob a licença MIT. Sinta-se livre para usar, estudar e modificar.
+Licença **MIT** — pode usar, estudar e modificar à vontade.
 
 ---
 
 <div align="center">
-  <h3>Desenvolvido com 💜 por <a href="https://github.com/wilamis-brasil">Wilamis Brasil</a></h3>
-  <p>Gostou da ferramenta? Considere apoiar o desenvolvimento!</p>
-  
+  <h3>Feito por <a href="https://github.com/wilamis-brasil">Wilamis Brasil</a> 💜</h3>
+  <p>Se curtiu a ferramenta e quiser apoiar o projeto:</p>
+
   <a href="https://github.com/sponsors/wilamis-brasil">
     <img src="https://img.shields.io/badge/Sponsor-Apoiar%20Projeto-bf3989?style=for-the-badge&logo=github-sponsors&logoColor=white" alt="Sponsor Button">
   </a>
