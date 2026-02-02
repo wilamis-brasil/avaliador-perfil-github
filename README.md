@@ -10,10 +10,6 @@ O **GitAuditor Premium** é uma ferramenta avançada de análise estática e com
 
 ---
 
-## 🎯 Objetivo
-
-Ajudar desenvolvedores a transformar seus perfis do GitHub em portfólios de alta conversão para recrutadores e colaboradores open source. A ferramenta atua como um "Consultor Sênior", analisando não apenas o código, mas a "saúde" da comunidade, segurança, governança e apresentação pessoal.
-
 ## ✨ Funcionalidades Principais
 
 *   **📊 Score Profissional:** Algoritmo de pontuação (0-100) calibrado com métricas de mercado (Engenharia, Comunidade, Segurança, Perfil).
@@ -25,9 +21,9 @@ Ajudar desenvolvedores a transformar seus perfis do GitHub em portfólios de alt
 
 ## 🛠️ Tecnologias Utilizadas
 
-*   **Frontend:** HTML5 Semântico, CSS3 Moderno (CSS Variables, Grid/Flexbox), JavaScript (ES6+ Vanilla).
+*   **Frontend:** HTML5 Semântico, CSS3 Moderno, JavaScript.
 *   **API:** Integração direta com **GitHub REST API v3**.
-*   **Design:** Interface inspirada no **GitHub Primer Design System** (Light Theme), focada em tipografia (`Inter` & `JetBrains Mono`) e usabilidade.
+*   **Design:** Interface inspirada no **GitHub Primer Design System**.
 *   **Extras:** Oneko.js (Mascote interativo).
 
 ## 🚀 Como Usar
